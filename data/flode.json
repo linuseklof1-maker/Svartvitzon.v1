@@ -1,0 +1,32 @@
+[
+  {
+    "type": "artikel",
+    "id": "vps-honka-referat",
+    "datum": "2026-07-12",
+    "kategori": "Matchreferat",
+    "titel": "VPS vände och vann på övertid",
+    "teaser": "Det såg mörkt ut i 85 minuter – sen exploderade Elisa Stadion.",
+    "bild": "bilder/vps-honka.jpg",
+    "lank": "artiklar/vps-honka-referat.html"
+  },
+  {
+    "type": "betyg",
+    "id": "betyg-vps-honka",
+    "datum": "2026-07-12",
+    "match": "VPS – Honka",
+    "resultat": "2–1",
+    "spelare": [
+      { "namn": "Målvakten", "position": "MV", "betyg": 8 },
+      { "namn": "Mittfältaren", "position": "MF", "betyg": 7 }
+    ]
+  },
+  {
+    "type": "quiz",
+    "id": "quiz-v29",
+    "datum": "2026-07-10",
+    "titel": "Veckans quiz",
+    "fraga": "Vem gjorde flest mål för VPS 2019?",
+    "svar": ["Spelare A", "Spelare B", "Spelare C"],
+    "ratt": 1
+  }
+]

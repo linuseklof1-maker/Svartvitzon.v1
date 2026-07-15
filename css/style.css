@@ -1,0 +1,268 @@
+En avlång logga över hela sidbredden – som en tidningsbanner. Snyggt, det förstärker "supportertidning"-känslan. Då behöver vi först en liten justering i HTML:en: en logo-rad ovanför headern. Lägg in det här direkt efter <body> på alla fyra sidor:
+html<div class="logo-banner">
+  <a href="index.html">
+    <img src="bilder/logga.png" alt="Svartvit zon">
+  </a>
+</div>
+Tills loggan finns kan du låta bilden vara trasig eller tillfälligt byta ut <img>-raden mot <span class="logo-text">SVARTVIT ZON</span> – CSS:en nedan hanterar båda. Den gamla <a class="logo">-länken inne i headern kan du ta bort, eftersom loggan nu bor i bannern istället. Kvar i headern blir bara meny-knappen och nav:en.
+Här är css/style.css:
+css/* ===== 1. Grund och färgtema ===== */
+:root {
+  --svart: #111111;
+  --vit: #ffffff;
+  --gra-ljus: #f2f2f2;
+  --gra-mellan: #d9d9d9;
+  --gra-text: #555555;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: var(--gra-ljus);
+  color: var(--svart);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .kort-kategori, .huvudmeny a, .logo-text {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== 2. Logo-bannern ===== */
+.logo-banner {
+  background-color: var(--vit);
+  border-bottom: 3px solid var(--svart);
+  text-align: center;
+  padding: 16px;
+}
+
+.logo-banner img {
+  max-width: 100%;
+  height: auto;
+  max-height: 80px;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+/* ===== 3. Header och hamburgermeny ===== */
+.site-header {
+  background-color: var(--svart);
+  color: var(--vit);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.meny-knapp {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 14px 16px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.meny-knapp span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--vit);
+}
+
+.huvudmeny {
+  display: none;
+  flex-direction: column;
+  background-color: var(--svart);
+}
+
+.huvudmeny.oppen {
+  display: flex;
+}
+
+.huvudmeny a {
+  color: var(--vit);
+  text-decoration: none;
+  padding: 14px 20px;
+  border-top: 1px solid #333333;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+.huvudmeny a.aktiv {
+  background-color: var(--vit);
+  color: var(--svart);
+  font-weight: bold;
+}
+
+/* ===== 4. Flödet och korten ===== */
+.flode {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kort {
+  background-color: var(--vit);
+  border: 1px solid var(--gra-mellan);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.kort-topp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--gra-ljus);
+}
+
+.kort-kategori {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.kort-topp time {
+  font-size: 0.8rem;
+  color: var(--gra-text);
+}
+
+.kort-bild {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.kort-innehall {
+  padding: 14px;
+}
+
+.kort-innehall h2 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.las-mer {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--svart);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid var(--svart);
+}
+
+/* ===== 5. Betygskortet ===== */
+.resultat {
+  color: var(--gra-text);
+  font-weight: normal;
+}
+
+.betygslista {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.betygslista li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gra-ljus);
+}
+
+.betygslista strong {
+  background-color: var(--svart);
+  color: var(--vit);
+  min-width: 32px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== 6. Quizkortet ===== */
+.quiz-fraga {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.quiz-svar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quiz-knapp {
+  padding: 10px 14px;
+  background-color: var(--vit);
+  border: 1px solid var(--svart);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.quiz-knapp:hover:not(:disabled) {
+  background-color: var(--svart);
+  color: var(--vit);
+}
+
+.quiz-knapp.ratt {
+  background-color: var(--svart);
+  color: var(--vit);
+}
+
+.quiz-knapp.fel {
+  background-color: var(--gra-mellan);
+  text-decoration: line-through;
+}
+
+.quiz-resultat {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ===== 7. Footer ===== */
+.site-footer {
+  background-color: var(--svart);
+  color: var(--gra-mellan);
+  text-align: center;
+  padding: 24px 16px;
+  margin-top: 32px;
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--vit);
+}
+
+/* ===== 8. Desktop ===== */
+@media (min-width: 768px) {
+  .meny-knapp {
+    display: none;
+  }
+
+  .huvudmeny {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .huvudmeny a {
+    border-top: none;
+  }
+}
