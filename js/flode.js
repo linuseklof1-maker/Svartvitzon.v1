@@ -25,10 +25,12 @@ function visaFlode(inlagg) {
     return new Date(b.datum) - new Date(a.datum);
   });
 
+  const senaste = inlagg.slice(0, 10);
+
   // Töm "Laddar..."-texten
   flodeElement.innerHTML = "";
 
-  inlagg.forEach(function (post) {
+ senaste.forEach(function (post) {
     let kort;
 
     switch (post.type) {

@@ -1,12 +1,4 @@
-En avlång logga över hela sidbredden – som en tidningsbanner. Snyggt, det förstärker "supportertidning"-känslan. Då behöver vi först en liten justering i HTML:en: en logo-rad ovanför headern. Lägg in det här direkt efter <body> på alla fyra sidor:
-html<div class="logo-banner">
-  <a href="index.html">
-    <img src="bilder/logga.png" alt="Svartvit zon">
-  </a>
-</div>
-Tills loggan finns kan du låta bilden vara trasig eller tillfälligt byta ut <img>-raden mot <span class="logo-text">SVARTVIT ZON</span> – CSS:en nedan hanterar båda. Den gamla <a class="logo">-länken inne i headern kan du ta bort, eftersom loggan nu bor i bannern istället. Kvar i headern blir bara meny-knappen och nav:en.
-Här är css/style.css:
-css/* ===== 1. Grund och färgtema ===== */
+/* ===== 1. Grund och färgtema ===== */
 :root {
   --svart: #111111;
   --vit: #ffffff;
@@ -265,4 +257,116 @@ h1, h2, h3, .kort-kategori, .huvudmeny a, .logo-text {
   .huvudmeny a {
     border-top: none;
   }
+}
+
+/* ===== 4b. Helsidor (merch, kontakt) ===== */
+.helsida {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 50vh;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.helsida h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.helsida p {
+  color: var(--gra-text);
+}
+
+.kontakt-mejl a {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--svart);
+  border-bottom: 3px solid var(--svart);
+  text-decoration: none;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== 7b. Arkivet ===== */
+.arkiv {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.arkiv h1 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-knapp {
+  padding: 8px 14px;
+  background-color: var(--vit);
+  border: 1px solid var(--svart);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.filter-knapp.aktiv {
+  background-color: var(--svart);
+  color: var(--vit);
+}
+
+.arkiv-lista {
+  list-style: none;
+}
+
+.arkiv-rad {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gra-mellan);
+}
+
+.arkiv-typ {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gra-text);
+  min-width: 60px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.arkiv-titel {
+  flex: 1;
+  color: var(--svart);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a.arkiv-titel:hover {
+  border-bottom: 2px solid var(--svart);
+}
+
+.arkiv-rad time {
+  font-size: 0.8rem;
+  color: var(--gra-text);
+  white-space: nowrap;
 }
