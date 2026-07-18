@@ -29,19 +29,27 @@ h1, h2, h3, .kort-kategori, .huvudmeny a, .logo-text {
   background-color: var(--vit);
   border-bottom: 3px solid var(--svart);
   text-align: center;
-  padding: 16px;
+  padding: 0;
+  line-height: 0;
 }
 
-.logo-banner img {
-  max-width: 100%;
-  height: auto;
-  max-height: 80px;
+.logo-banner {
+  background: linear-gradient(to right, var(--svart) 50%, var(--vit) 50%);
+  border-bottom: 3px solid var(--svart);
+  text-align: center;
+  padding: 0;
+  line-height: 0;
 }
-
 .logo-text {
   font-size: 1.6rem;
   font-weight: bold;
   letter-spacing: 4px;
+}
+
+.logo-banner img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
 }
 
 /* ===== 3. Header och hamburgermeny ===== */
@@ -370,3 +378,65 @@ a.arkiv-titel:hover {
   color: var(--gra-text);
   white-space: nowrap;
 }
+
+/* ===== 7c. Artikelsidor ===== */
+.artikel {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.artikel-kategori {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gra-text);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.artikel h1 {
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin: 8px 0;
+}
+
+.artikel-datum {
+  font-size: 0.85rem;
+  color: var(--gra-text);
+  margin-bottom: 16px;
+}
+
+.artikel-bild {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.artikel .ingress {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.artikel article p {
+  margin-bottom: 14px;
+}
+
+.artikel h2 {
+  font-size: 1.3rem;
+  margin: 24px 0 10px;
+}
+
+.tillbaka {
+  margin-top: 32px;
+}
+
+.tillbaka a {
+  color: var(--svart);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid var(--svart);
+}
+
