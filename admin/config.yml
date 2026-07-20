@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "bilder"
+public_folder: "/bilder"
+
+collections:
+  - name: "artiklar"
+    label: "Artiklar"
+    folder: "artiklar"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Mall", name: "layout", widget: "hidden", default: "artikel.html" }
+      - { label: "Titel (SEO, med lagnamn och resultat)", name: "title", widget: "string" }
+      - { label: "Rubrik", name: "rubrik", widget: "string" }
+      - { label: "Beskrivning (meta description)", name: "beskrivning", widget: "string" }
+      - { label: "Kategori", name: "kategori", widget: "select", options: ["Matchreferat", "Silly Season", "Krönika", "Nyhet"] }
+      - { label: "Datum", name: "datum", widget: "string", hint: "Format: 2026-07-19" }
+      - { label: "Datumtext", name: "datumtext", widget: "string", hint: "T.ex. 19 juli 2026" }
+      - { label: "Bild", name: "bild", widget: "image", required: false }
+      - { label: "Bildtext (alt)", name: "bildalt", widget: "string", required: false }
+      - { label: "Ingress", name: "ingress", widget: "string" }
+      - { label: "Brödtext", name: "body", widget: "markdown" }
