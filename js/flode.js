@@ -30,7 +30,7 @@ function visaFlode(inlagg) {
   // Töm "Laddar..."-texten
   flodeElement.innerHTML = "";
 
- senaste.forEach(function (post) {
+  senaste.forEach(function (post) {
     let kort;
 
     switch (post.type) {
@@ -67,7 +67,7 @@ function skapaArtikelkort(post) {
     <div class="kort-innehall">
       <h2>${post.titel}</h2>
       <p>${post.teaser}</p>
-      <a href="${post.lank}" class="las-mer">Läs hela artikeln →</a>
+      ${post.lank ? `<a href="${post.lank}" class="las-mer">Läs hela artikeln →</a>` : ""}
     </div>
   `;
 
