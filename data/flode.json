@@ -1,14 +1,5 @@
 [
   {
-    "type": "artikel",
-    "id": "hjk-vps-referat",
-    "datum": "2026-07-18",
-    "kategori": "Matchreferat",
-    "titel": "VPS förlorade med en straff emot sig i den 75:e minuten",
-    "teaser": "En match med varierande kvalitet – med ett oönskat resultat.",
-    "lank": "/artiklar/hjk-vps-referat/"
-  },
-  {
     "type": "quiz",
     "id": "quiz-v29",
     "datum": "2026-07-10",
@@ -24,23 +15,5 @@
     "kategori": "Silly Season",
     "titel": "Smyth klar för Notts County",
     "teaser": "Australiensiske anfallaren Luka Smyth är på väg till League One efter en flytt från VPS till Notts County. 20-åringen ska ha skrivit på ett 3+1-årsavtal, med en övergångssumma på upp till 150 000 € sedan han gått in på de sista sex månaderna av sitt kontrakt. Notts County ska ha slagit ut AFC Wimbledon och flera nederländska klubbar i kampen om anfallaren."
-  },
-  {
-    "type": "artikel",
-    "id": "vps-inter-referat",
-    "datum": "2026-08-02",
-    "kategori": "Matchreferat",
-    "titel": "Trots en stark insats, förlorade VPS hemma",
-    "teaser": "VPS arbetar på matchformen hemma mot Inter men föll med 0–1 trots en godkänd insats.",
-    "lank": "/artiklar/vps-inter/"
-  },
-  {
-    "type": "artikel",
-    "id": "salomaa-klar-for-vps",
-    "datum": "2026-08-04",
-    "kategori": "Silly Season",
-    "titel": "Anfallaren Henri Salomaa är klar för VEPSU",
-    "teaser": "Henri Salomaa förstärker anfallslinjen. 184 cm lång, fostrad i italienska Lecce och med ungdomslandslagsmeriter för Finland.",
-    "lank": "/artiklar/anfaller-från-inter-är-klar-för-vps/"
   }
 ]

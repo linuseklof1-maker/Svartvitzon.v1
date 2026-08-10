@@ -1,16 +1,15 @@
-// ===== 1. Hämta flödet och starta =====
+// ===== 1. Hämta båda källorna och starta =====
 const flodeElement = document.getElementById("flode");
 
 if (flodeElement) {
-  fetch("/data/flode.json")
-    .then(function (svar) {
-      if (!svar.ok) {
-        throw new Error("Kunde inte hämta flode.json (status " + svar.status + ")");
-      }
-      return svar.json();
-    })
-    .then(function (inlagg) {
-      visaFlode(inlagg);
+  Promise.all([
+    fetch("/data/artiklar-flode.json").then((r) => r.json()),
+    fetch("/data/flode.json").then((r) => r.json()),
+  ])
+    .then(function ([artiklar, ovrigt]) {
+      // Slå ihop de två listorna till en
+      const allt = artiklar.concat(ovrigt);
+      visaFlode(allt);
     })
     .catch(function (fel) {
       console.error(fel);
@@ -45,7 +44,7 @@ function visaFlode(inlagg) {
         break;
       default:
         console.warn("Okänd inläggstyp:", post.type);
-        return; // hoppa över okända typer
+        return;
     }
 
     flodeElement.appendChild(kort);
@@ -115,8 +114,6 @@ function skapaQuizkort(post) {
     </div>
   `;
 
-  // Svarsknapparna byggs med createElement (inte innerHTML)
-  // eftersom de behöver klick-lyssnare
   const svarsyta = kort.querySelector(".quiz-svar");
   const resultat = kort.querySelector(".quiz-resultat");
 
@@ -126,7 +123,6 @@ function skapaQuizkort(post) {
     knapp.textContent = svarstext;
 
     knapp.addEventListener("click", function () {
-      // Lås alla knappar efter svar
       kort.querySelectorAll(".quiz-knapp").forEach(function (k) {
         k.disabled = true;
       });
