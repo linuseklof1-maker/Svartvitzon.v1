@@ -5,14 +5,12 @@ const filterYta = document.getElementById("filter");
 let allaInlagg = []; // sparas här så filtren kan återanvända listan
 
 if (arkivLista) {
-   fetch("/data/flode.json")
-    .then(function (svar) {
-      if (!svar.ok) {
-        throw new Error("Kunde inte hämta flode.json (status " + svar.status + ")");
-      }
-      return svar.json();
-    })
-    .then(function (inlagg) {
+  Promise.all([
+    fetch("/data/artiklar-flode.json").then((r) => r.json()),
+    fetch("/data/flode.json").then((r) => r.json()),
+  ])
+    .then(function ([artiklar, ovrigt]) {
+      const inlagg = artiklar.concat(ovrigt);
       inlagg.sort(function (a, b) {
         return new Date(b.datum) - new Date(a.datum);
       });

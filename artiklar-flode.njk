@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
   {
     "type": "artikel",
     "id": "{{ artikel.fileSlug }}",
-    "datum": "{{ artikel.date.toISOString().slice(0, 10) }}",
+    "datum": "{{ artikel.data.datum }}",
     "kategori": "{{ artikel.data.kategori }}",
     "titel": "{{ artikel.data.rubrik }}",
     "teaser": "{{ artikel.data.beskrivning }}",
