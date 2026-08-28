@@ -460,3 +460,138 @@ a.arkiv-titel:hover {
   border-radius: 0;
   font-family: inherit;
 }
+
+/* ===== 9. Veckans pussel ===== */
+.spel {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.spel-titel {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.spel-hittade {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.spel-grupp-hittad {
+  background-color: var(--svart);
+  color: var(--vit);
+  border-radius: 8px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.spel-grupp-hittad strong {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.spel-grupp-hittad span {
+  font-size: 0.95rem;
+}
+
+.spel-rutnat {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.spel-kort {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px;
+  background-color: var(--vit);
+  border: 2px solid var(--svart);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.spel-kort:hover:not(:disabled) {
+  background-color: var(--gra-ljus);
+}
+
+.spel-kort.vald {
+  background-color: var(--svart);
+  color: var(--vit);
+  transform: scale(0.96);
+}
+
+.spel-kort.ratt {
+  background-color: #2e7d32;
+  border-color: #2e7d32;
+  color: var(--vit);
+}
+
+.spel-kort.fel {
+  background-color: #c62828;
+  border-color: #c62828;
+  color: var(--vit);
+}
+
+.spel-liv {
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.spel-knappar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.spel-gissa,
+.spel-rensa {
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  border: 2px solid var(--svart);
+}
+
+.spel-gissa {
+  background-color: var(--svart);
+  color: var(--vit);
+}
+
+.spel-gissa:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.spel-rensa {
+  background-color: var(--vit);
+  color: var(--svart);
+}
+
+.spel-resultat {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
