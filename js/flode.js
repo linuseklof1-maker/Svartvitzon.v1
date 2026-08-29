@@ -4,11 +4,12 @@ const flodeElement = document.getElementById("flode");
 if (flodeElement) {
   Promise.all([
     fetch("/data/artiklar-flode.json").then((r) => r.json()),
+    fetch("/data/pussel-flode.json").then((r) => r.json()),
     fetch("/data/flode.json").then((r) => r.json()),
   ])
-    .then(function ([artiklar, ovrigt]) {
-      // Slå ihop de två listorna till en
-      const allt = artiklar.concat(ovrigt);
+    .then(function ([artiklar, pussel, ovrigt]) {
+      // Slå ihop de tre listorna till en
+      const allt = artiklar.concat(pussel).concat(ovrigt);
       visaFlode(allt);
     })
     .catch(function (fel) {
@@ -16,7 +17,6 @@ if (flodeElement) {
       flodeElement.innerHTML = "<p class='fel'>Flödet kunde inte laddas just nu.</p>";
     });
 }
-
 // ===== 2. Rita upp hela flödet =====
 function visaFlode(inlagg) {
   // Sortera nyast först

@@ -1,0 +1,17 @@
+---
+permalink: /data/pussel-flode.json
+eleventyExcludeFromCollections: true
+---
+[
+{%- for pussel in collections.pussel %}
+  {
+    "type": "artikel",
+    "id": "{{ pussel.fileSlug }}",
+    "datum": "{{ pussel.data.datum }}",
+    "kategori": "Veckans pussel",
+    "titel": "{{ pussel.data.titel }}",
+    "teaser": "Fyra grupper, sexton namn. Hittar du sambanden? Spela veckans VPS-pussel!",
+    "lank": "{{ pussel.url }}"
+  }{%- if not loop.last %},{% endif %}
+{%- endfor %}
+]

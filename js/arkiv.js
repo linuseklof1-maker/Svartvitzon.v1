@@ -7,10 +7,11 @@ let allaInlagg = []; // sparas här så filtren kan återanvända listan
 if (arkivLista) {
   Promise.all([
     fetch("/data/artiklar-flode.json").then((r) => r.json()),
+    fetch("/data/pussel-flode.json").then((r) => r.json()),
     fetch("/data/flode.json").then((r) => r.json()),
   ])
-    .then(function ([artiklar, ovrigt]) {
-      const inlagg = artiklar.concat(ovrigt);
+    .then(function ([artiklar, pussel, ovrigt]) {
+      const inlagg = artiklar.concat(pussel).concat(ovrigt);
       inlagg.sort(function (a, b) {
         return new Date(b.datum) - new Date(a.datum);
       });
@@ -98,3 +99,4 @@ function formateraArkivDatum(datumStrang) {
     year: "numeric",
   });
 }
+

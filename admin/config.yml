@@ -23,3 +23,19 @@ collections:
       - { label: "Bildtext (alt)", name: "bildalt", widget: "string", required: false }
       - { label: "Ingress", name: "ingress", widget: "string" }
       - { label: "Brödtext", name: "body", widget: "markdown" }
+
+      - name: "pussel"
+    label: "Veckans pussel"
+    folder: "pussel"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Mall", name: "layout", widget: "hidden", default: "spel.html" }
+      - { label: "Titel", name: "titel", widget: "string" }
+      - { label: "Datum", name: "datum", widget: "string", hint: "Format: 2026-08-28" }
+      - label: "Grupper (exakt 4)"
+        name: "grupper"
+        widget: "list"
+        fields:
+          - { label: "Ledtråd (facit)", name: "ledtrad", widget: "string" }
+          - { label: "Fyra ord", name: "ord", widget: "list" }
