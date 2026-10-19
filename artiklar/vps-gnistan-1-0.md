@@ -2,7 +2,7 @@
 layout: artikel.html
 title: VPS - Gnistan (1-0)
 rubrik: VPS tar vinst hemma mot Gnistan
-beskrivning: vepsu
+beskrivning: Vepsu tar viktiga poäng i striden om Europa platser
 kategori: Matchreferat
 datum: 2026-10-12
 datumtext: 12 oktober 2026
