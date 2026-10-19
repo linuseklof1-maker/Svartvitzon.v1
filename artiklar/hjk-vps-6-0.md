@@ -6,7 +6,7 @@ beskrivning: vepsu
 kategori: Matchreferat
 datum: 2026-10-08
 datumtext: 8 Oktober 2026
-ingress: "HJK–VPS 6–0: En kväll att glömma"
+ingress: Iallfall startade ju några anfallare denna match.
 ---
 ### HJK–VPS 6–0: En kväll att glömma
 
