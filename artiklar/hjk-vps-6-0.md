@@ -2,7 +2,7 @@
 layout: artikel.html
 title: HJK - VPS (6-0)
 rubrik: Vepsu förlorar förtjänt på bortaplan i Töölö.
-beskrivning: vepsu
+beskrivning: En kväll att glömma
 kategori: Matchreferat
 datum: 2026-10-08
 datumtext: 8 Oktober 2026
